@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF15A77E234DB5BC00EF227A /* AVCaptureDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF15A77D234DB5BC00EF227A /* AVCaptureDevice + Extension.swift */; };
+		DF15A77F234DBA2A00EF227A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF870F64234B0FBE003C1FD7 /* ViewController.swift */; };
+		DF1D737123546A0900C8FBCF /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D737023546A0900C8FBCF /* MetalRenderer.swift */; };
+		DF1D7373235475B500C8FBCF /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = DF1D7372235475B500C8FBCF /* PassThrough.metal */; };
 		DF870F61234B0FBE003C1FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF870F60234B0FBE003C1FD7 /* AppDelegate.swift */; };
 		DF870F63234B0FBE003C1FD7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DF870F62234B0FBE003C1FD7 /* art.scnassets */; };
-		DF870F65234B0FBE003C1FD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF870F64234B0FBE003C1FD7 /* ViewController.swift */; };
 		DF870F68234B0FBE003C1FD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF870F66234B0FBE003C1FD7 /* Main.storyboard */; };
 		DF870F6A234B0FC0003C1FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF870F69234B0FC0003C1FD7 /* Assets.xcassets */; };
 		DF870F6D234B0FC0003C1FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF870F6B234B0FC0003C1FD7 /* LaunchScreen.storyboard */; };
+		DF870F75234B17DB003C1FD7 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF870F74234B17DB003C1FD7 /* VideoCapture.swift */; };
+		DF870F77234B23BC003C1FD7 /* VideoCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF870F76234B23BC003C1FD7 /* VideoCameraType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF15A77D234DB5BC00EF227A /* AVCaptureDevice + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice + Extension.swift"; sourceTree = "<group>"; };
+		DF1D737023546A0900C8FBCF /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
+		DF1D7372235475B500C8FBCF /* PassThrough.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
 		DF870F5D234B0FBE003C1FD7 /* FirstDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF870F60234B0FBE003C1FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF870F62234B0FBE003C1FD7 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -24,6 +32,8 @@
 		DF870F69234B0FC0003C1FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF870F6C234B0FC0003C1FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF870F6E234B0FC0003C1FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF870F74234B17DB003C1FD7 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		DF870F76234B23BC003C1FD7 /* VideoCameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCameraType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +68,13 @@
 			children = (
 				DF870F60234B0FBE003C1FD7 /* AppDelegate.swift */,
 				DF870F62234B0FBE003C1FD7 /* art.scnassets */,
-				DF870F64234B0FBE003C1FD7 /* ViewController.swift */,
+				DF870F74234B17DB003C1FD7 /* VideoCapture.swift */,
+				DF15A77D234DB5BC00EF227A /* AVCaptureDevice + Extension.swift */,
+				DF870F76234B23BC003C1FD7 /* VideoCameraType.swift */,
 				DF870F66234B0FBE003C1FD7 /* Main.storyboard */,
+				DF870F64234B0FBE003C1FD7 /* ViewController.swift */,
+				DF1D7372235475B500C8FBCF /* PassThrough.metal */,
+				DF1D737023546A0900C8FBCF /* MetalRenderer.swift */,
 				DF870F69234B0FC0003C1FD7 /* Assets.xcassets */,
 				DF870F6B234B0FC0003C1FD7 /* LaunchScreen.storyboard */,
 				DF870F6E234B0FC0003C1FD7 /* Info.plist */,
@@ -139,7 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF870F65234B0FBE003C1FD7 /* ViewController.swift in Sources */,
+				DF15A77F234DBA2A00EF227A /* ViewController.swift in Sources */,
+				DF1D7373235475B500C8FBCF /* PassThrough.metal in Sources */,
+				DF870F75234B17DB003C1FD7 /* VideoCapture.swift in Sources */,
+				DF1D737123546A0900C8FBCF /* MetalRenderer.swift in Sources */,
+				DF870F77234B23BC003C1FD7 /* VideoCameraType.swift in Sources */,
+				DF15A77E234DB5BC00EF227A /* AVCaptureDevice + Extension.swift in Sources */,
 				DF870F61234B0FBE003C1FD7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +305,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JFAMQ6UQ62;
+				DEVELOPMENT_TEAM = CW5S276BPQ;
 				INFOPLIST_FILE = FirstDepth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,8 +324,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JFAMQ6UQ62;
+				DEVELOPMENT_TEAM = CW5S276BPQ;
 				INFOPLIST_FILE = FirstDepth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

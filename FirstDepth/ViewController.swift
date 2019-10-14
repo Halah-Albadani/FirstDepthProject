@@ -7,12 +7,85 @@
 //
 
 import UIKit
-import SceneKit
-import ARKit
+import MetalKit
+import AVFoundation
 
-class ViewController: UIViewController, ARSCNViewDelegate {
-
-    @IBOutlet var sceneView: ARSCNView!
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var sceneView: MTKView!
+    
+    private var videoCapture: VideoCapture!
+    var curentCameraType: CameraType = .back(true)
+    private let serialQueue = DispatchQueue(label: "com.shu223.iOS-Depth-Sampler.queue")
+    
+    private var renderer: MetalRenderer!
+    private var depthImage: CIImage?
+    private var currentDrawableSize: CGSize!
+    
+    private var videoImage: CIImage?
+    
+    override func viewDidLoad() {
+           super.viewDidLoad()
+            
+        let device = MTLCreateSystemDefaultDevice()!
+        sceneView.device = device
+        sceneView.backgroundColor = UIColor.clear
+        sceneView.delegate = self
+        renderer = MetalRenderer(metalDevice: device, renderDestination: sceneView)
+        
+        videoCapture = VideoCapture(cameraType: curentCameraType, preferredSpec: nil, previewContainer: sceneView.layer )
+        
+        videoCapture.syncedDataBufferHandler = { [weak self] videoPixelBuffer, depthData, face in
+        guard let self = self else { return }
+            
+            self.videoImage = CIImage(cvPixelBuffer: videoPixelBuffer)
+            
+            }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let  videoCapture = videoCapture else {return}
+        videoCapture.startCapture()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let videoCapture = videoCapture else {return}
+        videoCapture.imageBufferHandler = nil
+        videoCapture.stopCapture()
+        sceneView.delegate = nil
+        super.viewWillDisappear(animated)
+    }
+}
+    extension ViewController: MTKViewDelegate {
+        func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+            currentDrawableSize = size
+        }
+        
+        func draw(in view: MTKView) {
+            if let image = depthImage {
+                renderer.update(with: image)
+            }
+        }
+    }
+    
+   /* extension RealtimeDepthViewController: MTKViewDelegate {
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        currentDrawableSize = size
+    }
+        
+      xfunc draw (in view : MTKView) {
+            if let image = depthImage {
+                renderer.update(with: image)
+            }
+        }
+    }*/
+    
+    
+    
+    //base
+    /*@IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,5 +144,5 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
-    }
-}
+    }*/
+
